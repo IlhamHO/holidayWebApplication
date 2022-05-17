@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Demandes de congés</title>
+</head>
+<body>
+    <h1>Demandes de congés</h1>
+    <div th:if="${list.isEmpty()}">
+        <p>Pas de demandes de congés en votre nom</p>
+    </div>
+    <div th:unless="${list.isEmpty()}">
+        <p>Les demandes de congés sont</p>
+        <ul>
+            <li th:each="h:${list}">
+                <span th:text="$h"></span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
