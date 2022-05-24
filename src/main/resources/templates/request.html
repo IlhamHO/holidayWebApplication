@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Demander des congés</title>
+</head>
+<body>
+<h1>Demande des congés</h1>
+<form method="post" th:action="@{/request}" th:object="${holiday}">
+    <div>
+        <label>employee:</label>
+        <input type="text" th:field="${holiday.employee}">
+    </div>
+    <div>
+        <label>début:</label>
+        <input type="date" th:field="${holiday.start}"/>
+    </div>
+    <div>
+        <label>fin: </label>
+        <input type="date" th:field="${holiday.end}"/>
+    </div>
+    <div>
+        <input type="submit" value="SAUVER">
+    </div>
+</form>
+</body>
+</html>

@@ -14,11 +14,6 @@ public class Holiday {
     private String end;
     private String status;
 
-    // ajouter
-    // constucteur sans argument
-    // constructeur avec tous les arguments
-    // tous les getter and setter
-    // le toString
     public Holiday() {
     }
 
