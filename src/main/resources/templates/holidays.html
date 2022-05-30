@@ -3,19 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Demandes de congés</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Demandes de congés</h1>
-    <div th:if="${list.isEmpty()}">
-        <p>Pas de demandes de congés en votre nom</p>
-    </div>
-    <div th:unless="${list.isEmpty()}">
-        <p>Les demandes de congés sont</p>
-        <ul>
-            <li th:each="h:${list}">
-                <span th:text="${h}"></span>
-            </li>
-        </ul>
-    </div>
+   <div class="container">
+       <h1>Demandes de congés</h1>
+       <div th:if="${list.isEmpty()}">
+           <p>Pas de demandes de congés en votre nom</p>
+       </div>
+       <div th:unless="${list.isEmpty()}">
+           <p>Les demandes de congés sont</p>
+           <table class="table table-striped">
+               <thead>
+               <tr>
+                   <th>Id</th>
+                   <th>Employee</th>
+                   <th>Start</th>
+                   <th>End</th>
+                   <th>Status</th>
+               </tr>
+               </thead>
+               <tbody>
+               <tr th:each="h:${list}">
+                   <td th:text="${h.id}"></td>
+                   <td th:text="${h.employee}"></td>
+                   <td th:text="${h.start}"></td>
+                   <td th:text="${h.end}"></td>
+                   <td th:text="${h.status}"></td>
+               </tr>
+               </tbody>
+           </table>
+           <!--        <ul>-->
+           <!--            <li th:each="h:${list}">-->
+           <!--                <span th:text="${h}"></span>-->
+           <!--            </li>-->
+           <!--        </ul>-->
+       </div>
+   </div>
 </body>
 </html>

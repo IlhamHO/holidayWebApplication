@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Demander des congés</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<h1>Demande des congés</h1>
-<form method="post" th:action="@{/request}" th:object="${holiday}">
-    <div>
-        <label>employee:</label>
-        <input type="text" th:field="${holiday.employee}">
-    </div>
-    <div>
-        <label>début:</label>
-        <input type="date" th:field="${holiday.start}"/>
-    </div>
-    <div>
-        <label>fin: </label>
-        <input type="date" th:field="${holiday.end}"/>
-    </div>
-    <div>
-        <input type="submit" value="SAUVER">
-    </div>
-</form>
+<div class="container">
+    <h1>Leave Request</h1>
+    <form method="post" th:action="@{/request}" th:object="${holiday}">
+        <div class="shadow-lg p-3 mb-5 bg-body rounded">
+        <div class="mb-3">
+            <label class="form-label">Employee:</label>
+            <input class="form-control" type="text" th:field="${holiday.employee}">
+            </div>
+        <div class="mb-3">
+            <label class="form-label">Start:</label>
+            <input class="form-control" type="date" th:field="${holiday.start}"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">End: </label>
+            <input class="form-control" type="date" th:field="${holiday.end}"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>
